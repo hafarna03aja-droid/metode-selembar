@@ -10,23 +10,39 @@ function playAudio(fileUrl) {
     });
 }
 
+// DEFINISI TEMA UNTUK SETIAP GRUP
+const themes = [
+    'theme-emerald',
+    'theme-indigo',
+    'theme-amber',
+    'theme-rose',
+    'theme-violet',
+    'theme-cyan',
+    'theme-teal'
+];
+
 // RENDER TABEL HURUF
 const tableContainer = document.getElementById('table-container');
 if (tableContainer && typeof hurufData !== 'undefined') {
-    hurufData.forEach(row => {
+    hurufData.forEach((row, rowIndex) => {
         const rowDiv = document.createElement('div');
+        rowDiv.className = "mb-10";
         
         const latinTitle = document.createElement('div');
-        latinTitle.className = "text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 px-2";
+        latinTitle.className = "text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 px-2 opacity-70";
         latinTitle.innerText = row.latin;
         rowDiv.appendChild(latinTitle);
 
         const cardsGrid = document.createElement('div');
         cardsGrid.className = "grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6";
         
+        // Pilih tema berdasarkan index baris (berulang jika baris > jumlah tema)
+        const currentTheme = themes[rowIndex % themes.length];
+
         row.items.forEach(item => {
             const card = document.createElement('div');
-            card.className = "letter-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center flex flex-col items-center justify-center";
+            // Tambahkan class tema ke kartu
+            card.className = `letter-card ${currentTheme} p-8 rounded-3xl shadow-sm text-center flex flex-col items-center justify-center`;
             card.onclick = () => playAudio(item.audio);
             card.innerHTML = `
                 <div class="arabic-text text-6xl text-emerald-800 font-bold mb-3">${item.char}</div>
@@ -54,7 +70,7 @@ if (latihanContainer && typeof latihanData !== 'undefined') {
             card.className = "practice-row bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden group";
             
             card.innerHTML = `
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="arabic-text text-4xl md:text-5xl leading-[2.5] md:leading-[2.8] text-slate-800 text-center">
                     ${text}
                 </div>

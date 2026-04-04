@@ -2,25 +2,104 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #f1f5f9;
 }
+
 .arabic-text {
     font-family: 'Amiri', serif;
     direction: rtl;
 }
+
+/* Card Styling Upgrade - Pro & Menarik */
 .letter-card {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
+
 .letter-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1);
-    border-color: #10b981;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
+
+.letter-card:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Color Themes */
+/* Group 1: Emerald */
+.theme-emerald {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 1px solid #10b98133;
+}
+.theme-emerald .arabic-text.text-emerald-800 { color: #065f46; }
+.theme-emerald .arabic-text.text-slate-400 { color: #065f4688; }
+.theme-emerald:hover { border-color: #10b981; }
+
+/* Group 2: Indigo */
+.theme-indigo {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    border: 1px solid #6366f133;
+}
+.theme-indigo .arabic-text.text-emerald-800 { color: #3730a3; }
+.theme-indigo .arabic-text.text-slate-400 { color: #3730a388; }
+.theme-indigo:hover { border-color: #6366f1; }
+
+/* Group 3: Amber */
+.theme-amber {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #f59e0b33;
+}
+.theme-amber .arabic-text.text-emerald-800 { color: #92400e; }
+.theme-amber .arabic-text.text-slate-400 { color: #92400e88; }
+.theme-amber:hover { border-color: #f59e0b; }
+
+/* Group 4: Rose */
+.theme-rose {
+    background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+    border: 1px solid #f43f5e33;
+}
+.theme-rose .arabic-text.text-emerald-800 { color: #9f1239; }
+.theme-rose .arabic-text.text-slate-400 { color: #9f123988; }
+.theme-rose:hover { border-color: #f43f5e; }
+
+/* Group 5: Violet (Purple) */
+.theme-violet {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #8b5cf633;
+}
+.theme-violet .arabic-text.text-emerald-800 { color: #5b21b6; }
+.theme-violet .arabic-text.text-slate-400 { color: #5b21b688; }
+.theme-violet:hover { border-color: #8b5cf6; }
+
+/* Group 6: Cyan */
+.theme-cyan {
+    background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+    border: 1px solid #06b6d433;
+}
+.theme-cyan .arabic-text.text-emerald-800 { color: #164e63; }
+.theme-cyan .arabic-text.text-slate-400 { color: #164e6388; }
+.theme-cyan:hover { border-color: #06b6d4; }
+
+/* Group 7: Teal */
+.theme-teal {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    border: 1px solid #14b8a633;
+}
+.theme-teal .arabic-text.text-emerald-800 { color: #115e59; }
+.theme-teal .arabic-text.text-slate-400 { color: #115e5988; }
+.theme-teal:hover { border-color: #14b8a6; }
+
+
 .practice-row {
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
 }
 .practice-row:hover {
     background-color: #f0fdf4;
+    transform: translateX(-4px);
 }
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
