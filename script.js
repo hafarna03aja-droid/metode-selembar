@@ -29,7 +29,7 @@ if (tableContainer && typeof hurufData !== 'undefined') {
         rowDiv.className = "mb-10";
         
         const latinTitle = document.createElement('div');
-        latinTitle.className = "text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 px-2 opacity-70";
+        latinTitle.className = "text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 px-2 opacity-100 latin-pro-3d";
         latinTitle.innerText = row.latin;
         rowDiv.appendChild(latinTitle);
 
@@ -61,8 +61,9 @@ const latihanContainer = document.getElementById('latihan-container');
 if (latihanContainer && typeof latihanData !== 'undefined') {
     latihanData.forEach(section => {
         const sectionHeader = document.createElement('div');
-        sectionHeader.className = "py-4 px-6 bg-slate-200 rounded-xl text-slate-600 font-bold text-sm uppercase tracking-widest mt-10 mb-4";
+        sectionHeader.className = "py-4 px-6 bg-slate-200 rounded-xl text-slate-600 font-bold text-sm uppercase tracking-widest mt-10 mb-4 latin-pro-3d";
         sectionHeader.innerText = section.level;
+        sectionHeader.style.color = 'inherit'; // Ensure gradient works even with slate classes
         latihanContainer.appendChild(sectionHeader);
 
         section.content.forEach((text, index) => {
