@@ -1,0 +1,27 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+}
+.arabic-text {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+}
+.letter-card {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.letter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+}
+.practice-row {
+    transition: background-color 0.2s;
+}
+.practice-row:hover {
+    background-color: #f0fdf4;
+}
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
