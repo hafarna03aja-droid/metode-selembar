@@ -1,32 +1,5 @@
 {
   "version": 2,
-  "name": "metode-selembar",
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "style.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "script.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "data.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "audio/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
