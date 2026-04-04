@@ -1,0 +1,16 @@
+{
+  "name": "metode-selembar",
+  "version": "1.0.0",
+  "description": "Metode Selembar - Belajar Al-Qur'an Interaktif",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
