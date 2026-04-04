@@ -46,7 +46,7 @@ if (tableContainer && typeof hurufData !== 'undefined') {
             card.onclick = () => playAudio(item.audio);
             card.innerHTML = `
                 <div class="arabic-text text-6xl text-emerald-800 font-bold mb-3">${item.char}</div>
-                <div class="arabic-text text-xl text-slate-400 font-medium">${item.full}</div>
+                <div class="arabic-text text-3xl text-slate-400 font-medium">${item.full}</div>
             `;
             cardsGrid.appendChild(card);
         });
