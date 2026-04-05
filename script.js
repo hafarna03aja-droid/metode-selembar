@@ -25,24 +25,24 @@ const themes = [
 const tableContainer = document.getElementById('table-container');
 if (tableContainer && typeof hurufData !== 'undefined') {
     hurufData.forEach((row, rowIndex) => {
+        // Pilih tema berdasarkan index baris (berulang jika baris > jumlah tema)
+        const currentTheme = themes[rowIndex % themes.length];
+
         const rowDiv = document.createElement('div');
-        rowDiv.className = "mb-10";
+        rowDiv.className = `mb-14 ${currentTheme}`; // Increased margin for better separation
         
         const latinTitle = document.createElement('div');
-        latinTitle.className = "text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4 px-2 opacity-100 latin-pro-3d";
+        latinTitle.className = "text-sm font-black uppercase tracking-[0.2em] mb-6 px-3 latin-theme-3d";
         latinTitle.innerText = row.latin;
         rowDiv.appendChild(latinTitle);
 
         const cardsGrid = document.createElement('div');
         cardsGrid.className = "grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6";
-        
-        // Pilih tema berdasarkan index baris (berulang jika baris > jumlah tema)
-        const currentTheme = themes[rowIndex % themes.length];
 
         row.items.forEach(item => {
             const card = document.createElement('div');
             // Tambahkan class tema ke kartu
-            card.className = `letter-card ${currentTheme} p-8 rounded-3xl shadow-sm text-center flex flex-col items-center justify-center`;
+            card.className = `letter-card p-8 rounded-3xl shadow-sm text-center flex flex-col items-center justify-center`;
             card.onclick = () => playAudio(item.audio);
             card.innerHTML = `
                 <div class="arabic-text text-6xl text-emerald-800 font-bold mb-3">${item.char}</div>
